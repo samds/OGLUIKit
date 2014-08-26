@@ -6,8 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-
-@interface OGLUIKit : NSObject
-
-@end
+#import <OGLUIKit/OGLTools.h>
+#import <OGLUIKit/OGLRendererProtocol.h>
+#import <OGLUIKit/OGLDynamicWindow.h>
+#import <OGLUIKit/OGLDynamicView.h>

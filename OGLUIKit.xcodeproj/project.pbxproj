@@ -9,13 +9,26 @@
 /* Begin PBXBuildFile section */
 		7EA3522319AC99210071C2B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3522219AC99210071C2B0 /* Cocoa.framework */; };
 		7EA3522D19AC99210071C2B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3522B19AC99210071C2B0 /* InfoPlist.strings */; };
-		7EA3523119AC99210071C2B0 /* OGLUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3523019AC99210071C2B0 /* OGLUIKit.m */; };
 		7EA3523819AC99210071C2B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3523719AC99210071C2B0 /* XCTest.framework */; };
 		7EA3523919AC99210071C2B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3522219AC99210071C2B0 /* Cocoa.framework */; };
 		7EA3523C19AC99210071C2B0 /* OGLUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3521F19AC99210071C2B0 /* OGLUIKit.framework */; };
 		7EA3524219AC99210071C2B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3524019AC99210071C2B0 /* InfoPlist.strings */; };
 		7EA3524419AC99210071C2B0 /* OGLUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3524319AC99210071C2B0 /* OGLUIKitTests.m */; };
 		7EA3524E19AC9E4F0071C2B0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3524D19AC9E4F0071C2B0 /* LICENSE */; };
+		7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3524F19ACA06D0071C2B0 /* OGLDynamicWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */; };
+		7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */; };
+		7EA3525C19ACA06D0071C2B0 /* OGLStaticWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525319ACA06D0071C2B0 /* OGLStaticWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3525D19ACA06D0071C2B0 /* OGLStaticWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */; };
+		7EA3525E19ACA06D0071C2B0 /* OGLStaticView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3525F19ACA06D0071C2B0 /* OGLStaticView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */; };
+		7EA3526019ACA06D0071C2B0 /* OGLRendererProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3526119ACB6340071C2B0 /* OGLTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3522F19AC99210071C2B0 /* OGLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EA3526A19ACCDDA0071C2B0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526919ACCDDA0071C2B0 /* GLKit.framework */; };
+		7EA3526C19ACCDE50071C2B0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526B19ACCDE50071C2B0 /* OpenGL.framework */; };
+		7EA3526E19ACCE150071C2B0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526D19ACCE150071C2B0 /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +51,25 @@
 		7EA3522C19AC99210071C2B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EA3522E19AC99210071C2B0 /* OGLUIKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OGLUIKit-Prefix.pch"; sourceTree = "<group>"; };
 		7EA3522F19AC99210071C2B0 /* OGLUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OGLUIKit.h; sourceTree = "<group>"; };
-		7EA3523019AC99210071C2B0 /* OGLUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OGLUIKit.m; sourceTree = "<group>"; };
 		7EA3523619AC99210071C2B0 /* OGLUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OGLUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA3523719AC99210071C2B0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7EA3523F19AC99210071C2B0 /* OGLUIKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OGLUIKitTests-Info.plist"; sourceTree = "<group>"; };
 		7EA3524119AC99210071C2B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EA3524319AC99210071C2B0 /* OGLUIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OGLUIKitTests.m; sourceTree = "<group>"; };
 		7EA3524D19AC9E4F0071C2B0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7EA3524F19ACA06D0071C2B0 /* OGLDynamicWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLDynamicWindow.h; sourceTree = "<group>"; };
+		7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLDynamicWindow.mm; sourceTree = "<group>"; };
+		7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLDynamicView.h; sourceTree = "<group>"; };
+		7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLDynamicView.mm; sourceTree = "<group>"; };
+		7EA3525319ACA06D0071C2B0 /* OGLStaticWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLStaticWindow.h; sourceTree = "<group>"; };
+		7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLStaticWindow.m; sourceTree = "<group>"; };
+		7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLStaticView.h; sourceTree = "<group>"; };
+		7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLStaticView.mm; sourceTree = "<group>"; };
+		7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLRendererProtocol.h; sourceTree = "<group>"; };
+		7EA3526119ACB6340071C2B0 /* OGLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLTools.h; sourceTree = "<group>"; };
+		7EA3526919ACCDDA0071C2B0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		7EA3526B19ACCDE50071C2B0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7EA3526D19ACCE150071C2B0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA3526E19ACCE150071C2B0 /* CoreVideo.framework in Frameworks */,
+				7EA3526C19ACCDE50071C2B0 /* OpenGL.framework in Frameworks */,
+				7EA3526A19ACCDDA0071C2B0 /* GLKit.framework in Frameworks */,
 				7EA3523C19AC99210071C2B0 /* OGLUIKit.framework in Frameworks */,
 				7EA3523919AC99210071C2B0 /* Cocoa.framework in Frameworks */,
 				7EA3523819AC99210071C2B0 /* XCTest.framework in Frameworks */,
@@ -91,6 +119,9 @@
 		7EA3522119AC99210071C2B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EA3526D19ACCE150071C2B0 /* CoreVideo.framework */,
+				7EA3526B19ACCDE50071C2B0 /* OpenGL.framework */,
+				7EA3526919ACCDDA0071C2B0 /* GLKit.framework */,
 				7EA3522219AC99210071C2B0 /* Cocoa.framework */,
 				7EA3523719AC99210071C2B0 /* XCTest.framework */,
 				7EA3522419AC99210071C2B0 /* Other Frameworks */,
@@ -112,7 +143,16 @@
 			isa = PBXGroup;
 			children = (
 				7EA3522F19AC99210071C2B0 /* OGLUIKit.h */,
-				7EA3523019AC99210071C2B0 /* OGLUIKit.m */,
+				7EA3524F19ACA06D0071C2B0 /* OGLDynamicWindow.h */,
+				7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */,
+				7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */,
+				7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */,
+				7EA3525319ACA06D0071C2B0 /* OGLStaticWindow.h */,
+				7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */,
+				7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */,
+				7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */,
+				7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */,
+				7EA3526119ACB6340071C2B0 /* OGLTools.h */,
 				7EA3522919AC99210071C2B0 /* Supporting Files */,
 			);
 			path = OGLUIKit;
@@ -154,6 +194,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */,
+				7EA3526019ACA06D0071C2B0 /* OGLRendererProtocol.h in Headers */,
+				7EA3525E19ACA06D0071C2B0 /* OGLStaticView.h in Headers */,
+				7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */,
+				7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */,
+				7EA3525C19ACA06D0071C2B0 /* OGLStaticWindow.h in Headers */,
+				7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA3523119AC99210071C2B0 /* OGLUIKit.m in Sources */,
+				7EA3525D19ACA06D0071C2B0 /* OGLStaticWindow.m in Sources */,
+				7EA3525F19ACA06D0071C2B0 /* OGLStaticView.mm in Sources */,
+				7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.mm in Sources */,
+				7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +453,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OGLUIKit/OGLUIKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -425,6 +476,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OGLUIKit/OGLUIKit-Prefix.pch";
 				INFOPLIST_FILE = "OGLUIKitTests/OGLUIKitTests-Info.plist";
