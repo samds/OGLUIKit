@@ -15,6 +15,7 @@
 		7EA3523C19AC99210071C2B0 /* OGLUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3521F19AC99210071C2B0 /* OGLUIKit.framework */; };
 		7EA3524219AC99210071C2B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3524019AC99210071C2B0 /* InfoPlist.strings */; };
 		7EA3524419AC99210071C2B0 /* OGLUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3524319AC99210071C2B0 /* OGLUIKitTests.m */; };
+		7EA3524E19AC9E4F0071C2B0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3524D19AC9E4F0071C2B0 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		7EA3523F19AC99210071C2B0 /* OGLUIKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OGLUIKitTests-Info.plist"; sourceTree = "<group>"; };
 		7EA3524119AC99210071C2B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EA3524319AC99210071C2B0 /* OGLUIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OGLUIKitTests.m; sourceTree = "<group>"; };
+		7EA3524D19AC9E4F0071C2B0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				7EA3522A19AC99210071C2B0 /* OGLUIKit-Info.plist */,
 				7EA3522B19AC99210071C2B0 /* InfoPlist.strings */,
 				7EA3522E19AC99210071C2B0 /* OGLUIKit-Prefix.pch */,
+				7EA3524D19AC9E4F0071C2B0 /* LICENSE */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA3524E19AC9E4F0071C2B0 /* LICENSE in Resources */,
 				7EA3522D19AC99210071C2B0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +453,7 @@
 				7EA3524919AC99210071C2B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EA3524A19AC99210071C2B0 /* Build configuration list for PBXNativeTarget "OGLUIKitTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +462,7 @@
 				7EA3524C19AC99210071C2B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
