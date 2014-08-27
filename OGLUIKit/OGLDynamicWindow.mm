@@ -96,4 +96,12 @@
     }
     return self;
 }
+
+- (void)dealloc
+{
+    NSLog(@"%s",__FUNCTION__);
+    
+    [self setOpenGLDelegate:nil];
+    [self setMyOpenGLView:nil];
+}
 @end

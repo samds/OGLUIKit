@@ -36,6 +36,10 @@
 @interface OpenGLDynamicView ()
 {
     CVDisplayLinkRef displayLink; //display link for managing rendering thread
+    /*
+     * Current view size in pixel.
+     */
+    NSRect currentViewSize;
 }
 @end
 
@@ -187,6 +191,8 @@
 
 - (void) dealloc
 {
+    NSLog(@"%s",__FUNCTION__);
+
 	// Stop the display link BEFORE releasing anything in the view
     // otherwise the display link thread may call into the view and crash
     // when it encounters something that has been release
@@ -261,7 +267,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 {
     NSLog(@"%s",__FUNCTION__);
 	[super reshape];
-	
+    
 	// We draw on a secondary thread through the display link. However, when
 	// resizing the view, -drawRect is called on the main thread.
 	// Add a mutex around to avoid the threads accessing the context
@@ -298,10 +304,16 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     
 #endif // !SUPPORT_RETINA_RESOLUTION
     
-    NSLog(@"View Rect Pixels %f %f",viewRectPixels.size.width,viewRectPixels.size.height);
+//    NSLog(@"View Rect Pixels %f %f",viewRectPixels.size.width,viewRectPixels.size.height);
+    
+    if (NSIsEmptyRect(viewRectPixels) || NSEqualRects(viewRectPixels, currentViewSize)) {
+        return;
+    }
+    else {
+        currentViewSize = viewRectPixels;
+    }
     
 	// Set the new dimensions in our renderer
-//	[self.renderer didUpdateWindowRect:viewRectPixels];
     [self.viewDelegate didUpdateWindowRect:viewRectPixels];
     
 	CGLUnlockContext((CGLContextObj)[[self openGLContext] CGLContextObj]);
