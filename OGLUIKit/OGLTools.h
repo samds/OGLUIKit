@@ -9,8 +9,6 @@
 #ifndef OpenGLTutorial_OpenGLTools_h
 #define OpenGLTutorial_OpenGLTools_h
 
-
-#include <fstream>
 #include <OpenGL/gl3.h>
 
 /*static */inline GLuint loadShaders(const char * vertex_file_path,const char * fragment_file_path);
