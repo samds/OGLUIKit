@@ -20,9 +20,6 @@
 @property(weak,nonatomic) id<OpenGLDynamicViewDelegate> openGLDelegate;
 
 - (instancetype)initWithFrame:(CGRect)frame
-                     renderer:(id)renderer
-                 viewDelegate:(id)delegate;
-- (instancetype)initWithFrame:(CGRect)frame
                      delegate:(id<OpenGLDynamicViewDelegate>)delegate;
 
 @end

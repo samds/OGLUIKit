@@ -8,20 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @protocol OpenGLViewDelegate,OpenGLDynamicViewDelegate,OpenGLRenderer;
 
+
 @interface OpenGLDynamicView : NSOpenGLView
-
-@property(weak,nonatomic) id<OpenGLViewDelegate> openGLDelegate;
-@property(weak,nonatomic) id<OpenGLRenderer> renderer;
 @property(weak,nonatomic) id<OpenGLDynamicViewDelegate> viewDelegate;
-
-- (id)initWithFrame:(NSRect)frame
-           renderer:(id)renderer
-           delegate:(id<OpenGLDynamicViewDelegate>)delegate;
 - (id)initWithFrame:(NSRect)frame
            delegate:(id<OpenGLDynamicViewDelegate>)delegate;
-
 @end
 
 

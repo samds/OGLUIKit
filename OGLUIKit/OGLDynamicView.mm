@@ -45,21 +45,6 @@
 // Constructor
 ////////////////////////////////////////////////////////////////////////////////
 
-
-- (id)initWithFrame:(NSRect)frame
-           renderer:(id)renderer
-           delegate:(id<OpenGLDynamicViewDelegate>)delegate;
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-        [self setViewDelegate:delegate];
-        [self setRenderer:renderer];
-        [self awakeFromNib];
-    }
-    return self;
-}
-
 - (id)initWithFrame:(NSRect)frame
            delegate:(id<OpenGLDynamicViewDelegate>)delegate
 {
@@ -77,7 +62,9 @@
     NSOpenGLPixelFormatAttribute attrs[] =
 	{
 		NSOpenGLPFADoubleBuffer,
-		NSOpenGLPFADepthSize, 24,
+//		NSOpenGLPFADepthSize, 24,
+        NSOpenGLPFAColorSize, 24,
+		NSOpenGLPFAAlphaSize, 8,
 		// Must specify the 3.2 Core Profile to use OpenGL 3.2
 #if ESSENTIAL_GL_PRACTICES_SUPPORT_GL3
 		NSOpenGLPFAOpenGLProfile,
@@ -235,12 +222,15 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 //    double deltaTime = 1.0 / (outputTime->rateScalar * (double)outputTime->videoTimeScale / (double)outputTime->videoRefreshPeriod);
 //    NSLog(@"delta %f",deltaTime);
     
-	[self drawView];
+	[self drawView:outputTime];
 	
     return kCVReturnSuccess;
 }
 
-- (void) drawView
+/*
+ * If outputTime is NULL redraw the last frame
+ */
+- (void) drawView:(const CVTimeStamp*)outputTime
 {
 	[[self openGLContext] makeCurrentContext];
     
@@ -252,7 +242,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     
     // Draws in back buffer
 //    [self.renderer render];
-    [self.viewDelegate renderForTime:NULL];
+    [self.viewDelegate renderForTime:outputTime];
     
 	CGLFlushDrawable((CGLContextObj)[[self openGLContext] CGLContextObj]);
 	CGLUnlockContext((CGLContextObj)[[self openGLContext] CGLContextObj]);
@@ -264,7 +254,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	// Called during resize operations
 	
 	// Avoid flickering during resize by drawiing
-	[self drawView];
+	[self drawView:NULL];
 }
 
 - (void) reshape
