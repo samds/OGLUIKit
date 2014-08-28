@@ -307,16 +307,16 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 //    NSLog(@"View Rect Pixels %f %f",viewRectPixels.size.width,viewRectPixels.size.height);
     
     if (NSIsEmptyRect(viewRectPixels) || NSEqualRects(viewRectPixels, currentViewSize)) {
-        return;
+        
     }
     else {
         currentViewSize = viewRectPixels;
+        
+        // Set the new dimensions in our renderer
+        [self.viewDelegate didUpdateWindowRect:viewRectPixels];
     }
     
-	// Set the new dimensions in our renderer
-    [self.viewDelegate didUpdateWindowRect:viewRectPixels];
-    
-	CGLUnlockContext((CGLContextObj)[[self openGLContext] CGLContextObj]);
+    CGLUnlockContext((CGLContextObj)[[self openGLContext] CGLContextObj]);
 }
 
 - (void)renewGState
