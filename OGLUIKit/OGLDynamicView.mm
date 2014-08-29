@@ -77,22 +77,27 @@
 		0
 	};
 	
-	NSOpenGLPixelFormat *pf = [[NSOpenGLPixelFormat alloc] initWithAttributes:attrs];
+	NSOpenGLPixelFormat *pf = [[NSOpenGLPixelFormat alloc]
+                               initWithAttributes:attrs];
 	
 	if (!pf)
 	{
 		NSLog(@"No OpenGL pixel format");
 	}
     
-    NSOpenGLContext* context = [[NSOpenGLContext alloc] initWithFormat:pf shareContext:nil];
+    NSOpenGLContext* context = [[NSOpenGLContext alloc] initWithFormat:pf
+                                                          shareContext:nil];
     
 #if ESSENTIAL_GL_PRACTICES_SUPPORT_GL3 && defined(DEBUG)
-	// When we're using a CoreProfile context, crash if we call a legacy OpenGL function
-	// This will make it much more obvious where and when such a function call is made so
-	// that we can remove such calls.
-	// Without this we'd simply get GL_INVALID_OPERATION error for calling legacy functions
+	// When we're using a CoreProfile context,
+    // crash if we call a legacy OpenGL function
+	// This will make it much more obvious where and when such a
+    // function call is made so that we can remove such calls.
+	// Without this we'd simply get GL_INVALID_OPERATION error
+    // for calling legacy functions
 	// but it would be more difficult to see where that function was called.
-	CGLEnable((CGLContextObj)[context CGLContextObj], kCGLCECrashOnRemovedFunctions);
+	CGLEnable((CGLContextObj)[context CGLContextObj],
+                                            kCGLCECrashOnRemovedFunctions);
 #endif
 	
     [self setPixelFormat:pf];
@@ -118,31 +123,11 @@
     
     // Synchronize buffer swaps with vertical refresh rate
     GLint swapInt = 1;
-    [[self openGLContext] setValues:&swapInt forParameter:NSOpenGLCPSwapInterval];
+    [[self openGLContext] setValues:&swapInt
+                       forParameter:NSOpenGLCPSwapInterval];
     
     // Init our renderer.  Use 0 for the defaultFBO which is appropriate for
 	// OSX (but not iOS since iOS apps must create their own FBO)
-
-    ////////////////////////////////////////////////
-    // Set up OpenGL state that will never change //
-    ////////////////////////////////////////////////
-    
-    // Depth test will always be enabled
-//    glEnable(GL_DEPTH_TEST);
-
-    // Accept fragment if it closer to the camera than the former one
-//    glDepthFunc(GL_LESS);
-    
-    // We will always cull back faces for better performance
-//    glEnable(GL_CULL_FACE);
-    
-    // Allow to clear only the region defined by the glViewport() function.
-//    glEnable(GL_SCISSOR_TEST);
-    
-//    glDisable(GL_LINE_SMOOTH);
-    
-    // Always use this clear color
-    // glClearColor(0.5f, 0.4f, 0.5f, 1.0f);
 }
 
 - (void)prepareOpenGL
@@ -155,29 +140,50 @@
 	//  and build the necessary rendering objects
 	[self initGL];
     
+    ////////////////////////////////////////////////
+    // Set up OpenGL state that will never change //
+    ////////////////////////////////////////////////
+    
     // Init buffer specified by the renderer
-//    [self.renderer didCreateOpenGLContext:nil];
     [self.viewDelegate didCreateOpenGLContext:nil];
+    
+    ////////////////////////////////////////////////
+    // Init the CVDisplayLink                     //
+    ////////////////////////////////////////////////
     
     // Create a display link capable of being used with all active displays
     CVDisplayLinkCreateWithActiveCGDisplays(&displayLink);
     
     // Set the renderer output callback function
-    CVDisplayLinkSetOutputCallback(displayLink, &MyDisplayLinkCallback, (__bridge void *)(self));
+    CVDisplayLinkSetOutputCallback(displayLink,
+                                   &MyDisplayLinkCallback,
+                                   (__bridge void *)(self)
+                                   );
     
     // Set the display link for the current renderer
-    CGLContextObj cglContext = (CGLContextObj)[[self openGLContext] CGLContextObj];
-    CGLPixelFormatObj cglPixelFormat = (CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj];
-    CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, cglContext, cglPixelFormat);
+    CGLContextObj cglContext =
+                        (CGLContextObj)[[self openGLContext] CGLContextObj];
+    CGLPixelFormatObj cglPixelFormat =
+                    (CGLPixelFormatObj)[[self pixelFormat] CGLPixelFormatObj];
+    CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink,
+                                                      cglContext,
+                                                      cglPixelFormat);
     
     // Activate the display link
     CVDisplayLinkStart(displayLink);
     
-    // Register to be notified when the window closes so we can stop the displaylink
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(windowWillClose:)
-                                                 name:NSWindowWillCloseNotification
-                                               object:[self window]];
+    ////////////////////////////////////////////////
+    // Other                                      //
+    ////////////////////////////////////////////////
+    
+    // Register to be notified when the window closes so
+    // we can stop the displaylink
+    [[NSNotificationCenter defaultCenter]
+                                    addObserver:self
+                                       selector:@selector(windowWillClose:)
+                                           name:NSWindowWillCloseNotification
+                                         object:[self window]
+    ];
 }
 
 - (void) windowWillClose:(NSNotification*)notification
@@ -209,9 +215,16 @@
 }
 
 // This is the renderer output callback function
-static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeStamp* now, const CVTimeStamp* outputTime, CVOptionFlags flagsIn, CVOptionFlags* flagsOut, void* displayLinkContext)
+static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
+                                      const CVTimeStamp* now,
+                                      const CVTimeStamp* outputTime,
+                                      CVOptionFlags flagsIn,
+                                      CVOptionFlags* flagsOut,
+                                      void* displayLinkContext)
 {
-    CVReturn result = [(__bridge OpenGLDynamicView*)displayLinkContext getFrameForTime:outputTime];
+    CVReturn result = [(__bridge OpenGLDynamicView*)displayLinkContext
+                                                    getFrameForTime:outputTime
+                       ];
     return result;
 }
 
@@ -225,7 +238,9 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 //    NSLog(@"Host Time : %lli",outputTime->hostTime);
 //    CVDisplayLinkGetActualOutputVideoRefreshPeriod(displayLink);
     
-//    double deltaTime = 1.0 / (outputTime->rateScalar * (double)outputTime->videoTimeScale / (double)outputTime->videoRefreshPeriod);
+//    double deltaTime = 1.0 / (outputTime->rateScalar *
+//      (double)outputTime->videoTimeScale /
+//      (double)outputTime->videoRefreshPeriod);
 //    NSLog(@"delta %f",deltaTime);
     
 	[self drawView:outputTime];
@@ -247,7 +262,6 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 	CGLLockContext((CGLContextObj)[[self openGLContext] CGLContextObj]);
     
     // Draws in back buffer
-//    [self.renderer render];
     [self.viewDelegate renderForTime:outputTime];
     
 	CGLFlushDrawable((CGLContextObj)[[self openGLContext] CGLContextObj]);
@@ -279,16 +293,17 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     
 #if SUPPORT_RETINA_RESOLUTION
     
-    // Rendering at retina resolutions will reduce aliasing, but at the potential
-    // cost of framerate and battery life due to the GPU needing to render more
-    // pixels.
+    // Rendering at retina resolutions will reduce aliasing,
+    // but at the potential cost of framerate and battery life due to the
+    // GPU needing to render more pixels.
     
     // Any calculations the renderer does which use pixel dimentions, must be
     // in "retina" space.  [NSView convertRectToBacking] converts point sizes
     // to pixel sizes.  Thus the renderer gets the size in pixels, not points,
     // so that it can set it's viewport and perform and other pixel based
     // calculations appropriately.
-    // viewRectPixels will be larger (2x) than viewRectPoints for retina displays.
+    // viewRectPixels will be larger (2x) than viewRectPoints
+    // for retina displays.
     // viewRectPixels will be the same as viewRectPoints for non-retina displays
     NSRect viewRectPixels = [self convertRectToBacking:viewRectPoints];
     
@@ -304,12 +319,9 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     
 #endif // !SUPPORT_RETINA_RESOLUTION
     
-//    NSLog(@"View Rect Pixels %f %f",viewRectPixels.size.width,viewRectPixels.size.height);
-    
-    if (NSIsEmptyRect(viewRectPixels) || NSEqualRects(viewRectPixels, currentViewSize)) {
-        
-    }
-    else {
+    if ( !NSIsEmptyRect(viewRectPixels) &
+         !NSEqualRects(viewRectPixels, currentViewSize)
+        ) {
         currentViewSize = viewRectPixels;
         
         // Set the new dimensions in our renderer

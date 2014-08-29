@@ -11,7 +11,7 @@
 
 #include <OpenGL/gl3.h>
 
-/*static inline*/ GLuint loadShaders(const char * vertex_file_path,const char * fragment_file_path);
+GLuint loadShaders(const char * vertex_file_path,const char * fragment_file_path);
 
 static inline const char * GetGLErrorString(GLenum error)
 {
