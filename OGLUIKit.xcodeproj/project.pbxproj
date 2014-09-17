@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */; };
 		7EA3522319AC99210071C2B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3522219AC99210071C2B0 /* Cocoa.framework */; };
 		7EA3522D19AC99210071C2B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3522B19AC99210071C2B0 /* InfoPlist.strings */; };
 		7EA3523819AC99210071C2B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3523719AC99210071C2B0 /* XCTest.framework */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLTypes.h; sourceTree = "<group>"; };
 		7EA3521F19AC99210071C2B0 /* OGLUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OGLUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA3522219AC99210071C2B0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7EA3522519AC99210071C2B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,6 +158,7 @@
 				7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */,
 				7EA3526119ACB6340071C2B0 /* OGLTools.h */,
 				7EA3527319ADDA030071C2B0 /* OGLTools.cpp */,
+				7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */,
 				7EA3522919AC99210071C2B0 /* Supporting Files */,
 			);
 			path = OGLUIKit;
@@ -204,6 +207,7 @@
 				7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */,
 				7EA3525C19ACA06D0071C2B0 /* OGLStaticWindow.h in Headers */,
 				7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */,
+				7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
