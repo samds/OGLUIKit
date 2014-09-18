@@ -168,7 +168,7 @@
     // Depth test will always be enabled
 //    glEnable(GL_DEPTH_TEST);
 	glDisable(GL_DEPTH_TEST);
-    GetGLError();
+    OGL_GET_GL_ERROR();
     
     // Accept fragment if it closer to the camera than the former one
     //    glDepthFunc(GL_LESS);

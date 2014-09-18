@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */; };
+		7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3522319AC99210071C2B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3522219AC99210071C2B0 /* Cocoa.framework */; };
 		7EA3522D19AC99210071C2B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3522B19AC99210071C2B0 /* InfoPlist.strings */; };
 		7EA3523819AC99210071C2B0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3523719AC99210071C2B0 /* XCTest.framework */; };
@@ -206,8 +206,8 @@
 				7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */,
 				7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */,
 				7EA3525C19ACA06D0071C2B0 /* OGLStaticWindow.h in Headers */,
-				7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */,
 				7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */,
+				7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

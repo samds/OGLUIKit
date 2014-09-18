@@ -10,64 +10,65 @@
 #define OpenGLTutorial_OpenGLTools_h
 
 #include <OpenGL/gl3.h>
+#include <CoreFoundation/CFBase.h> // CFStringRef
 
-GLuint loadShaders(const char * vertex_file_path,const char * fragment_file_path);
-
-static inline const char * GetGLErrorString(GLenum error)
+namespace ogl
 {
-	const char *str;
-	switch( error )
-	{
-		case GL_NO_ERROR:
-			str = "GL_NO_ERROR";
-			break;
-		case GL_INVALID_ENUM:
-			str = "GL_INVALID_ENUM";
-			break;
-		case GL_INVALID_VALUE:
-			str = "GL_INVALID_VALUE";
-			break;
-		case GL_INVALID_OPERATION:
-			str = "GL_INVALID_OPERATION";
-			break;
-#if defined __gl_h_ || defined __gl3_h_
-		case GL_OUT_OF_MEMORY:
-			str = "GL_OUT_OF_MEMORY";
-			break;
-		case GL_INVALID_FRAMEBUFFER_OPERATION:
-			str = "GL_INVALID_FRAMEBUFFER_OPERATION";
-			break;
-#endif
-#if defined __gl_h_
-		case GL_STACK_OVERFLOW:
-			str = "GL_STACK_OVERFLOW";
-			break;
-		case GL_STACK_UNDERFLOW:
-			str = "GL_STACK_UNDERFLOW";
-			break;
-		case GL_TABLE_TOO_LARGE:
-			str = "GL_TABLE_TOO_LARGE";
-			break;
-#endif
-		default:
-			str = "(ERROR: Unknown Error Enum)";
-			break;
-	}
-	return str;
-}
+    
+/*
+ * Load a vertex & fragment shaders into memory.
+ *
+ * @param vertex_file_path      path to the vertex shader file
+ * @param fragment_file_path    path to the fragment shader file
+ *
+ * @return                      the program id of the program object 
+ *                              newly created
+ */
+GLuint load_shaders(const char* vertex_file_path,
+                    const char* fragment_file_path);
 
-#define GetGLError()									\
+/*
+ * Convert an OpenGL internal error in a human readable string.
+ *
+ * @return a readable string describing the error
+ */
+const char* get_readable_error(GLenum error);
+
+/*
+ * OS X ONLY.
+ * Search a file with the given name and extension 
+ * in the current bundle ressourse.
+ *
+ * @param file          The name of the requested resource.
+ * @param extension     The abstract type of the requested resource.
+ *                      (Without the first dot)
+ *
+ * @return              a C string whose contents the path 
+ *                      to <file>.<extension>.
+ *                      NULL if the ressource cannot be found.
+ */
+const char* path_to_file(CFStringRef file, CFStringRef extension);
+
+} // namespace ogl
+
+/*
+ * Display the last Open GL error
+ */
+#define OGL_GET_GL_ERROR()                              \
 {														\
     GLenum err = glGetError();							\
     while (err != GL_NO_ERROR) {						\
         printf("GLError %s set in File:%s Line:%d\n",	\
-                GetGLErrorString(err),					\
+                ogl::get_readable_error(err),			\
                 __FILE__,								\
                 __LINE__);								\
         err = glGetError();								\
     }													\
 }
 
-#define BUFFER_OFFSET(bytes)  ((GLubyte*) NULL + (bytes))
+/*
+ * Convenient macro to generate offset
+ */
+#define BUFFER_OFFSET(bytes)  ((GLvoid*) NULL + (bytes))
 
 #endif

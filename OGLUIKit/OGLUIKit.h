@@ -10,3 +10,4 @@
 #import <OGLUIKit/OGLRendererProtocol.h>
 #import <OGLUIKit/OGLDynamicWindow.h>
 #import <OGLUIKit/OGLDynamicView.h>
+#import <OGLUIKit/OGLTypes.h>

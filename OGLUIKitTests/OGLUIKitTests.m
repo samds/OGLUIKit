@@ -50,15 +50,15 @@
     glDisable(GL_DEPTH_TEST);
     glDisable(GL_LINE_SMOOTH);
     glDisable(GL_SCISSOR_TEST);
-    GetGLError();
+    OGL_GET_GL_ERROR();
 }
 
 - (void)renderForTime:(const CVTimeStamp *)outputTime
 {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    GetGLError();
+    OGL_GET_GL_ERROR();
     glClear(GL_COLOR_BUFFER_BIT);
-    GetGLError();
+    OGL_GET_GL_ERROR();
 }
 
 - (void)didUpdateWindowRect:(NSRect)rect
