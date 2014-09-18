@@ -11,9 +11,7 @@
 @protocol OpenGLDynamicViewDelegate;
 @class OpenGLDynamicView;
 
-/*
- * Dynamic OpenGL View
- */
+
 @interface OpenGLDynamicWindow : NSWindow
 
 @property(strong,nonatomic) OpenGLDynamicView *myOpenGLView;

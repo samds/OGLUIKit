@@ -24,7 +24,6 @@
 		7EA3525D19ACA06D0071C2B0 /* OGLStaticWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */; };
 		7EA3525E19ACA06D0071C2B0 /* OGLStaticView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3525F19ACA06D0071C2B0 /* OGLStaticView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */; };
-		7EA3526019ACA06D0071C2B0 /* OGLRendererProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3526119ACB6340071C2B0 /* OGLTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3522F19AC99210071C2B0 /* OGLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526A19ACCDDA0071C2B0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526919ACCDDA0071C2B0 /* GLKit.framework */; };
@@ -68,7 +67,6 @@
 		7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLStaticWindow.m; sourceTree = "<group>"; };
 		7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLStaticView.h; sourceTree = "<group>"; };
 		7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLStaticView.mm; sourceTree = "<group>"; };
-		7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLRendererProtocol.h; sourceTree = "<group>"; };
 		7EA3526119ACB6340071C2B0 /* OGLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLTools.h; sourceTree = "<group>"; };
 		7EA3526919ACCDDA0071C2B0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7EA3526B19ACCDE50071C2B0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -155,7 +153,6 @@
 				7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */,
 				7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */,
 				7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */,
-				7EA3525719ACA06D0071C2B0 /* OGLRendererProtocol.h */,
 				7EA3526119ACB6340071C2B0 /* OGLTools.h */,
 				7EA3527319ADDA030071C2B0 /* OGLTools.cpp */,
 				7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */,
@@ -201,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */,
-				7EA3526019ACA06D0071C2B0 /* OGLRendererProtocol.h in Headers */,
 				7EA3525E19ACA06D0071C2B0 /* OGLStaticView.h in Headers */,
 				7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */,
 				7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */,
