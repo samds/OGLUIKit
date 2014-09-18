@@ -12,12 +12,3 @@
 -(void)didUpdateWindowRect:(NSRect)rect;
 -(void)didCreateOpenGLContext:(id)userInfo;
 @end
-
-
-@protocol OpenGLRenderer
-
-- (void)didCreateOpenGLContext:(id)userInfo;
-- (void)render;                                 // draw in the back buffer
-- (void)didUpdateWindowRect:(NSRect)rect;
-
-@end
