@@ -66,9 +66,10 @@ const char* path_to_file(CFStringRef file, CFStringRef extension);
     }													\
 }
 
+
 /*
  * Convenient macro to generate offset
  */
-#define BUFFER_OFFSET(bytes)  ((GLvoid*) NULL + (bytes))
+#define OGL_BUFFER_OFFSET(bytes)  ((GLvoid*)((GLubyte*) NULL + (bytes)))
 
 #endif

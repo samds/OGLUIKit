@@ -7,10 +7,8 @@
 //
 
 #import "OGLDynamicView.h"
-//#import "MyRenderer.h"
 #import <OpenGL/OpenGL.h>
 #import "OGLTools.h"
-#import "OGLRendererProtocol.h"
 
 #define SUPPORT_RETINA_RESOLUTION 0
 

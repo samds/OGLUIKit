@@ -7,7 +7,6 @@
 //
 
 #import "OGLStaticView.h"
-#import "OGLRendererProtocol.h"
 #import <OpenGL/OpenGL.h>
 #import "OGLTools.h"
 

@@ -6,8 +6,7 @@
 //
 //
 
-#import <OGLUIKit/OGLTools.h>
-#import <OGLUIKit/OGLRendererProtocol.h>
-#import <OGLUIKit/OGLDynamicWindow.h>
-#import <OGLUIKit/OGLDynamicView.h>
 #import <OGLUIKit/OGLTypes.h>
+#import <OGLUIKit/OGLTools.h>
+#import <OGLUIKit/OGLDynamicView.h>
+#import <OGLUIKit/OGLDynamicWindow.h>
