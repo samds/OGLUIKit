@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E465A0D19CC347C00F8967B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526D19ACCE150071C2B0 /* CoreVideo.framework */; };
+		7E465A0E19CC348300F8967B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526B19ACCDE50071C2B0 /* OpenGL.framework */; };
 		7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3522319AC99210071C2B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3522219AC99210071C2B0 /* Cocoa.framework */; };
 		7EA3522D19AC99210071C2B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3522B19AC99210071C2B0 /* InfoPlist.strings */; };
@@ -20,10 +22,6 @@
 		7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */; };
 		7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */; };
-		7EA3525C19ACA06D0071C2B0 /* OGLStaticWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525319ACA06D0071C2B0 /* OGLStaticWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA3525D19ACA06D0071C2B0 /* OGLStaticWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */; };
-		7EA3525E19ACA06D0071C2B0 /* OGLStaticView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA3525F19ACA06D0071C2B0 /* OGLStaticView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */; };
 		7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3526119ACB6340071C2B0 /* OGLTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3522F19AC99210071C2B0 /* OGLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526A19ACCDDA0071C2B0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526919ACCDDA0071C2B0 /* GLKit.framework */; };
@@ -80,6 +78,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA3522319AC99210071C2B0 /* Cocoa.framework in Frameworks */,
+				7E465A0D19CC347C00F8967B /* CoreVideo.framework in Frameworks */,
+				7E465A0E19CC348300F8967B /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,10 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */,
-				7EA3525E19ACA06D0071C2B0 /* OGLStaticView.h in Headers */,
 				7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */,
 				7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */,
-				7EA3525C19ACA06D0071C2B0 /* OGLStaticWindow.h in Headers */,
 				7E6D039E19C9DEFF00E1F789 /* OGLTypes.h in Headers */,
 				7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */,
 			);
@@ -302,9 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA3525D19ACA06D0071C2B0 /* OGLStaticWindow.m in Sources */,
 				7EA3527419ADDA030071C2B0 /* OGLTools.cpp in Sources */,
-				7EA3525F19ACA06D0071C2B0 /* OGLStaticView.mm in Sources */,
 				7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.mm in Sources */,
 				7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.mm in Sources */,
 			);
@@ -422,13 +418,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_LOCATION = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OGLUIKit/OGLUIKit-Prefix.pch";
 				INFOPLIST_FILE = "OGLUIKit/OGLUIKit-Info.plist";
+				INSTALL_PATH = "";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -446,6 +445,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OGLUIKit/OGLUIKit-Prefix.pch";
 				INFOPLIST_FILE = "OGLUIKit/OGLUIKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};

@@ -12,7 +12,9 @@
 #include <OpenGL/gltypes.h>
 #include <GLKit/GLKMatrix4.h>
 
-namespace ogl {
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 struct OGLrect {
     GLint x,y;
@@ -25,6 +27,8 @@ struct OGLsize {
 };
 typedef struct OGLsize OGLsize;
 
-} // namespace ogl
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -12,8 +12,9 @@
 #include <OpenGL/gl3.h>
 #include <CoreFoundation/CFBase.h> // CFStringRef
 
-namespace ogl
-{
+#ifdef __cplusplus
+extern "C" {
+#endif
     
 /*
  * Load a vertex & fragment shaders into memory.
@@ -49,8 +50,6 @@ const char* get_readable_error(GLenum error);
  */
 const char* path_to_file(CFStringRef file, CFStringRef extension);
 
-} // namespace ogl
-
 /*
  * Display the last Open GL error
  */
@@ -59,7 +58,7 @@ const char* path_to_file(CFStringRef file, CFStringRef extension);
     GLenum err = glGetError();							\
     while (err != GL_NO_ERROR) {						\
         printf("GLError %s set in File:%s Line:%d\n",	\
-                ogl::get_readable_error(err),			\
+                get_readable_error(err),                \
                 __FILE__,								\
                 __LINE__);								\
         err = glGetError();								\
@@ -71,5 +70,9 @@ const char* path_to_file(CFStringRef file, CFStringRef extension);
  * Convenient macro to generate offset
  */
 #define OGL_BUFFER_OFFSET(bytes)  ((GLvoid*)((GLubyte*) NULL + (bytes)))
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

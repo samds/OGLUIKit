@@ -12,7 +12,7 @@
 #include <fstream>
 #include <CoreFoundation/CFBundle.h> // CFBundleRef
 
-GLuint ogl::load_shaders(const char* vertex_file_path,
+GLuint load_shaders(const char* vertex_file_path,
                          const char* fragment_file_path)
 {    
     // Create the shaders
@@ -98,7 +98,7 @@ GLuint ogl::load_shaders(const char* vertex_file_path,
     return ProgramID;
 }
 
-const char* ogl::get_readable_error(GLenum error)
+const char* get_readable_error(GLenum error)
 {
 	const char *str;
 	switch( error )
@@ -141,7 +141,7 @@ const char* ogl::get_readable_error(GLenum error)
 	return str;
 }
 
-char const* ogl::path_to_file(CFStringRef file, CFStringRef extension)
+char const* path_to_file(CFStringRef file, CFStringRef extension)
 {
     // Get a reference to the main bundle
     CFBundleRef mainBundle = CFBundleGetMainBundle();
