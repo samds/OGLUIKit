@@ -19,9 +19,9 @@
 		7EA3524419AC99210071C2B0 /* OGLUIKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3524319AC99210071C2B0 /* OGLUIKitTests.m */; };
 		7EA3524E19AC9E4F0071C2B0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7EA3524D19AC9E4F0071C2B0 /* LICENSE */; };
 		7EA3525819ACA06D0071C2B0 /* OGLDynamicWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3524F19ACA06D0071C2B0 /* OGLDynamicWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */; };
+		7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.m */; };
 		7EA3525A19ACA06D0071C2B0 /* OGLDynamicView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */; };
+		7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA3525219ACA06D0071C2B0 /* OGLDynamicView.m */; };
 		7EA3526219ACB6340071C2B0 /* OGLTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3526119ACB6340071C2B0 /* OGLTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526819ACCBBD0071C2B0 /* OGLUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA3522F19AC99210071C2B0 /* OGLUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EA3526A19ACCDDA0071C2B0 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA3526919ACCDDA0071C2B0 /* GLKit.framework */; };
@@ -58,13 +58,13 @@
 		7EA3524319AC99210071C2B0 /* OGLUIKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OGLUIKitTests.m; sourceTree = "<group>"; };
 		7EA3524D19AC9E4F0071C2B0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7EA3524F19ACA06D0071C2B0 /* OGLDynamicWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLDynamicWindow.h; sourceTree = "<group>"; };
-		7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLDynamicWindow.mm; sourceTree = "<group>"; };
+		7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLDynamicWindow.m; sourceTree = "<group>"; };
 		7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLDynamicView.h; sourceTree = "<group>"; };
-		7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLDynamicView.mm; sourceTree = "<group>"; };
+		7EA3525219ACA06D0071C2B0 /* OGLDynamicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLDynamicView.m; sourceTree = "<group>"; };
 		7EA3525319ACA06D0071C2B0 /* OGLStaticWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLStaticWindow.h; sourceTree = "<group>"; };
 		7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLStaticWindow.m; sourceTree = "<group>"; };
 		7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLStaticView.h; sourceTree = "<group>"; };
-		7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OGLStaticView.mm; sourceTree = "<group>"; };
+		7EA3525619ACA06D0071C2B0 /* OGLStaticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGLStaticView.m; sourceTree = "<group>"; };
 		7EA3526119ACB6340071C2B0 /* OGLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGLTools.h; sourceTree = "<group>"; };
 		7EA3526919ACCDDA0071C2B0 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7EA3526B19ACCDE50071C2B0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -146,13 +146,13 @@
 			children = (
 				7EA3522F19AC99210071C2B0 /* OGLUIKit.h */,
 				7EA3524F19ACA06D0071C2B0 /* OGLDynamicWindow.h */,
-				7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.mm */,
+				7EA3525019ACA06D0071C2B0 /* OGLDynamicWindow.m */,
 				7EA3525119ACA06D0071C2B0 /* OGLDynamicView.h */,
-				7EA3525219ACA06D0071C2B0 /* OGLDynamicView.mm */,
+				7EA3525219ACA06D0071C2B0 /* OGLDynamicView.m */,
 				7EA3525319ACA06D0071C2B0 /* OGLStaticWindow.h */,
 				7EA3525419ACA06D0071C2B0 /* OGLStaticWindow.m */,
 				7EA3525519ACA06D0071C2B0 /* OGLStaticView.h */,
-				7EA3525619ACA06D0071C2B0 /* OGLStaticView.mm */,
+				7EA3525619ACA06D0071C2B0 /* OGLStaticView.m */,
 				7EA3526119ACB6340071C2B0 /* OGLTools.h */,
 				7EA3527319ADDA030071C2B0 /* OGLTools.cpp */,
 				7E6D039D19C9DEFF00E1F789 /* OGLTypes.h */,
@@ -301,8 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA3527419ADDA030071C2B0 /* OGLTools.cpp in Sources */,
-				7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.mm in Sources */,
-				7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.mm in Sources */,
+				7EA3525B19ACA06D0071C2B0 /* OGLDynamicView.m in Sources */,
+				7EA3525919ACA06D0071C2B0 /* OGLDynamicWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
