@@ -39,6 +39,7 @@
      */
     NSRect currentViewSize;
 }
+@property(assign,readwrite) BOOL isOpenGLContextInitialized;
 @end
 
 @implementation OpenGLDynamicView
@@ -53,13 +54,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
+        self.isOpenGLContextInitialized = NO;
+        
         [self setViewDelegate:delegate];
-        [self awakeFromNib];
+        [self createOpenGLContext];
     }
     return self;
 }
 
-- (void)awakeFromNib
+- (void)createOpenGLContext
 {
     NSOpenGLPixelFormatAttribute attrs[] =
 	{
@@ -143,6 +146,7 @@
     ////////////////////////////////////////////////
     
     // Init buffer specified by the renderer
+    self.isOpenGLContextInitialized = YES;
     [self.viewDelegate didCreateOpenGLContext:nil];
     
     ////////////////////////////////////////////////
