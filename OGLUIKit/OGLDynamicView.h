@@ -9,18 +9,18 @@
 #import <Cocoa/Cocoa.h>
 
 
-@protocol OpenGLViewDelegate,OpenGLDynamicViewDelegate,OpenGLRenderer;
+@protocol OpenGLViewDelegate,OpenGLContextDelegate,OpenGLRenderer;
 
 
 @interface OpenGLDynamicView : NSOpenGLView
-@property(weak,nonatomic) id<OpenGLDynamicViewDelegate> viewDelegate;
+@property(weak,nonatomic) id<OpenGLContextDelegate> viewDelegate;
 @property(assign,readonly) BOOL isOpenGLContextInitialized;
 - (id)initWithFrame:(NSRect)frame
-           delegate:(id<OpenGLDynamicViewDelegate>)delegate;
+           delegate:(id<OpenGLContextDelegate>)delegate;
 @end
 
 
-@protocol OpenGLDynamicViewDelegate
+@protocol OpenGLContextDelegate
 - (void)didCreateOpenGLContext:(id)userInfo;
 - (void)renderForTime:(const CVTimeStamp*)outputTime;
 - (void)didUpdateWindowRect:(NSRect)rect;

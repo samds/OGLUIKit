@@ -17,6 +17,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 @interface OpenGLDynamicWindow ()
+@property (assign,nonatomic) BOOL isFullScreen;
+@property (assign,nonatomic) NSRect windowFrame;
 @end
 
 @implementation OpenGLDynamicWindow
@@ -33,7 +35,7 @@
  * content."
  */
 - (instancetype)initWithFrame:(CGRect)frame
-                     delegate:(id<OpenGLDynamicViewDelegate>)delegate
+                     delegate:(id<OpenGLContextDelegate>)delegate
 {
     NSUInteger mask =     NSTitledWindowMask
     | NSClosableWindowMask
@@ -47,7 +49,6 @@
     
     if (self) {
         NSWindow* window = self;
-        
         // Minimum size for the window
         [window setMinSize:MINIMUM_WINDOW_SIZE];
         
@@ -93,6 +94,10 @@
         
         [self.myOpenGLView.superview addConstraints:
          @[topContraint,leftContraint,rightContraint,bottomContraint]];
+        
+        // Init. variables
+        self.isFullScreen = NO;
+        self.windowFrame = window.frame;
     }
     return self;
 }
@@ -104,4 +109,105 @@
     [self setOpenGLDelegate:nil];
     [self setMyOpenGLView:nil];
 }
+
+#pragma mark - Full Screen
+
+- (BOOL)acceptsFirstResponder
+{
+    return YES;
+}
+
+// Automatic if acceptsFirstResponder return YES.
+//- (BOOL)canBecomeKeyView
+//{
+//    return YES;
+//}
+
+/*
+ * Discussion:
+ * Need to call [self.window makeFirstResponder:self]
+ * And implement -(BOOL)canBecomeKeyView;
+ */
+//- (void) keyDown:(NSEvent *)event
+//{
+//    NSLog(@"%@",[event debugDescription]);
+//	unichar c = [[event charactersIgnoringModifiers] characterAtIndex:0];
+//    
+//	switch (c)
+//	{
+//            // Handle [ESC] key
+//		case 27:
+//            [self close];
+//			return;
+//            // Have f key toggle fullscreen
+//		case 'f':
+//            [self toggleWindowMode];
+//			return;
+//	}
+//    
+//	// Allow other character to be handled (or not and beep)
+//	[super keyDown:event];
+//}
+
+- (void)toggleWindowMode
+{
+    if (self.isFullScreen) {
+        [self setWindowedMode:self.windowFrame];
+    }
+    else {
+        // Saves the current window's frame rectangle
+        self.windowFrame = self.frame;
+        
+        // Switch to full screen
+        [self setFullScreen];
+    }
+}
+
+- (void)setFullScreen;
+{
+    // Create a screen-sized window on the display you want to take over
+    NSRect screenRect = [[NSScreen mainScreen] frame];
+    
+    // Initialize the window making it size of the screen and borderless
+    //    self = [super initWithContentRect:screenRect
+    //                            styleMask:NSBorderlessWindowMask
+    //                              backing:NSBackingStoreBuffered
+    //                                defer:YES];
+    [self setStyleMask:NSBorderlessWindowMask];
+    [self setFrame:screenRect display:YES animate:NO];
+    
+    // Set the window level to be above the menu bar to cover everything else
+    [self setLevel:NSMainMenuWindowLevel+1];
+    
+    // Set opaque
+    [self setOpaque:YES];
+    
+    // Hide this when user switches to another window (or app)
+    [self setHidesOnDeactivate:YES];
+    
+    self.isFullScreen = YES;
+}
+
+- (void)setWindowedMode:(NSRect)windowFrame
+{
+    NSUInteger mask =     NSTitledWindowMask
+                        | NSClosableWindowMask
+                        | NSResizableWindowMask
+                        | NSMiniaturizableWindowMask ;
+    
+    [self setStyleMask:mask];
+    [self setFrame:windowFrame display:YES animate:NO];
+    
+    // Set the window level to be above the menu bar to cover everything else
+    [self setLevel:NSNormalWindowLevel];
+    
+    // Set opaque
+    [self setOpaque:YES];
+    
+    // Hide this when user switches to another window (or app)
+    [self setHidesOnDeactivate:NO];
+    
+    self.isFullScreen = NO;
+}
+
 @end

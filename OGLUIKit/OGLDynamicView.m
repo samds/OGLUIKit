@@ -49,7 +49,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 - (id)initWithFrame:(NSRect)frame
-           delegate:(id<OpenGLDynamicViewDelegate>)delegate
+           delegate:(id<OpenGLContextDelegate>)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -362,28 +362,4 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 //    return YES;
 //}
 
-/*
- * Discussion:
- * Need to call [self.window makeFirstResponder:self]
- * And implement -(BOOL)canBecomeKeyView;
- */
-- (void) keyDown:(NSEvent *)event
-{
-    NSLog(@"%@",[event debugDescription]);
-	unichar c = [[event charactersIgnoringModifiers] characterAtIndex:0];
-    
-	switch (c)
-	{
-            // Handle [ESC] key
-		case 27:
-            [self.window close];
-			return;
-            // Have f key toggle fullscreen
-		case 'f':
-			return;
-	}
-    
-	// Allow other character to be handled (or not and beep)
-	[super keyDown:event];
-}
 @end
