@@ -1,5 +1,5 @@
 //
-//  OGLStaticWindow.mm
+//  OGLStaticWindow.m
 //  OGLUIKit
 //
 //  Created by samuel on 26/08/2014.
