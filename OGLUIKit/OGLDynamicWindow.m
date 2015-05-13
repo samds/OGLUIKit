@@ -53,8 +53,74 @@
         [window setMinSize:MINIMUM_WINDOW_SIZE];
         
         self.myOpenGLView =
-        [[OpenGLDynamicView alloc] initWithFrame:frame
-                                        delegate:delegate ];
+        [[OpenGLDynamicView alloc] initWithFrame:frame];
+        [self.myOpenGLView createOpenGLContextWithDelegate:delegate];
+        
+        [window.contentView addSubview:self.myOpenGLView];
+        
+        [self.myOpenGLView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        NSLayoutConstraint *rightContraint =
+        [NSLayoutConstraint constraintWithItem:self.myOpenGLView
+                                     attribute:NSLayoutAttributeLeading
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.myOpenGLView.superview
+                                     attribute:NSLayoutAttributeLeading
+                                    multiplier:1.0f
+                                      constant:0.0f];
+        NSLayoutConstraint *topContraint =
+        [NSLayoutConstraint constraintWithItem:self.myOpenGLView
+                                     attribute:NSLayoutAttributeTop
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.myOpenGLView.superview
+                                     attribute:NSLayoutAttributeTop
+                                    multiplier:1.0f
+                                      constant:0.0f];
+        NSLayoutConstraint *bottomContraint =
+        [NSLayoutConstraint constraintWithItem:self.myOpenGLView
+                                     attribute:NSLayoutAttributeBottom
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.myOpenGLView.superview
+                                     attribute:NSLayoutAttributeBottom
+                                    multiplier:1.0f
+                                      constant:0.0f];
+        NSLayoutConstraint *leftContraint =
+        [NSLayoutConstraint constraintWithItem:self.myOpenGLView
+                                     attribute:NSLayoutAttributeTrailing
+                                     relatedBy:NSLayoutRelationEqual
+                                        toItem:self.myOpenGLView.superview
+                                     attribute:NSLayoutAttributeTrailing
+                                    multiplier:1.0f
+                                      constant:0.0f];
+        
+        [self.myOpenGLView.superview addConstraints:
+         @[topContraint,leftContraint,rightContraint,bottomContraint]];
+        
+        // Init. variables
+        self.isFullScreen = NO;
+        self.windowFrame = window.frame;
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    NSUInteger mask =     NSTitledWindowMask
+    | NSClosableWindowMask
+    | NSResizableWindowMask
+    | NSMiniaturizableWindowMask ;
+    
+    self = [super initWithContentRect:frame
+                            styleMask:mask
+                              backing:NSBackingStoreBuffered
+                                defer:YES];
+    
+    if (self) {
+        NSWindow* window = self;
+        // Minimum size for the window
+        [window setMinSize:MINIMUM_WINDOW_SIZE];
+        
+        self.myOpenGLView =
+        [[OpenGLDynamicView alloc] initWithFrame:frame];
         
         [window.contentView addSubview:self.myOpenGLView];
         

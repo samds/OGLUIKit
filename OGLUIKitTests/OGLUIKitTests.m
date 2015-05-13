@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <OGLUIKit/OGLUIKit.h>
 
-@interface OGLUIKitTests : XCTestCase <OpenGLDynamicViewDelegate>
+@interface OGLUIKitTests : XCTestCase <OpenGLContextDelegate>
 @property(strong,nonatomic) OpenGLDynamicWindow *window;
 @end
 

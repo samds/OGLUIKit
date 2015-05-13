@@ -15,8 +15,9 @@
 @interface OpenGLDynamicView : NSOpenGLView
 @property(weak,nonatomic) id<OpenGLContextDelegate> viewDelegate;
 @property(assign,readonly) BOOL isOpenGLContextInitialized;
-- (id)initWithFrame:(NSRect)frame
-           delegate:(id<OpenGLContextDelegate>)delegate;
+- (instancetype)init;
+- (instancetype)initWithFrame:(NSRect)frameRect;
+- (void)createOpenGLContextWithDelegate:(id<OpenGLContextDelegate>)delegate;
 @end
 
 

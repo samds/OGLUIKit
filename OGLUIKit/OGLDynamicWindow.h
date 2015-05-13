@@ -27,6 +27,14 @@
 /*
  * Initializes the window with the specified values.
  *
+ * @param frame         Origin and size of the window’s content area
+ *                      in screen coordinates.
+ */
+- (instancetype)initWithFrame:(CGRect)frame;
+
+/*
+ * Initializes the window with the specified values.
+ *
  * @param frame         Origin and size of the window’s content area 
  *                      in screen coordinates.
  * @param delegate      OpenGL view's delegate (to get feedback about 

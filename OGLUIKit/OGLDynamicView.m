@@ -29,8 +29,6 @@
 #endif
 
 
-#define AUTO_UPDATE 1
-
 @interface OpenGLDynamicView ()
 {
     CVDisplayLinkRef displayLink; //display link for managing rendering thread
@@ -40,6 +38,8 @@
     NSRect currentViewSize;
 }
 @property(assign,readwrite) BOOL isOpenGLContextInitialized;
+- (instancetype)initWithFrame:(NSRect)frame
+                     delegate:(id<OpenGLContextDelegate>)delegate;
 @end
 
 @implementation OpenGLDynamicView
@@ -48,18 +48,43 @@
 // Constructor
 ////////////////////////////////////////////////////////////////////////////////
 
-- (id)initWithFrame:(NSRect)frame
-           delegate:(id<OpenGLContextDelegate>)delegate
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        // Initialization code here.
+        self.isOpenGLContextInitialized = NO;
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(NSRect)frameRect
+{
+    self = [super initWithFrame:frameRect];
+    if (self) {
+        // Initialization code here.
+        self.isOpenGLContextInitialized = NO;
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(NSRect)frame
+                     delegate:(id<OpenGLContextDelegate>)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
         self.isOpenGLContextInitialized = NO;
         
-        [self setViewDelegate:delegate];
-        [self createOpenGLContext];
+        [self createOpenGLContextWithDelegate:delegate];
     }
     return self;
+}
+
+- (void)createOpenGLContextWithDelegate:(id<OpenGLContextDelegate>)delegate
+{
+    [self setViewDelegate:delegate];
+    [self createOpenGLContext];
 }
 
 - (void)createOpenGLContext
