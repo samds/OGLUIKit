@@ -2,8 +2,8 @@
 //  OGLTypes.h
 //  OGLUIKit
 //
-//  Created by samuel de santis on 17/09/2014.
-//  Copyright (c) 2014 Samuel DE SANTIS. All rights reserved.
+//  Created by samuel on 26/08/2014.
+//  Copyright (c) 2014 SDS. All rights reserved.
 //
 
 #ifndef OGLUIKit_OGLTypes_h

@@ -2,8 +2,8 @@
 //  OGLStaticWindow.h
 //  OGLUIKit
 //
-//  Created by samuel de santis on 26/08/2014.
-//  Copyright (c) 2014 Samuel DE SANTIS. All rights reserved.
+//  Created by samuel on 26/08/2014.
+//  Copyright (c) 2014 SDS. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
